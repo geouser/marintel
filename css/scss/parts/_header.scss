@@ -81,4 +81,5 @@
 .logo {
     display: block;
     @include position(absolute, 40px, auto, auto, 40px);
+    z-index: 5;
 }
