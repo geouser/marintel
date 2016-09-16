@@ -82,3 +82,76 @@
     display: block;
     @include position(absolute, 40px, auto, auto, 40px);
 }
+
+.menuArrow {
+    position: absolute;
+    top: 95px;
+    right: 65px;
+    z-index: 10;
+}
+
+.circle {
+  -webkit-transform: scale(0);
+     -moz-transform: scale(0);
+      -ms-transform: scale(0);
+       -o-transform: scale(0);
+          transform: scale(0);
+    transform-origin: 50% 50%;
+    animation: zoom .2s forwards;
+    animation-delay: 1s;
+}
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 3s forwards;
+  animation-delay: .4s;
+}
+.menuArrow  .circle {
+    animation-delay: 3.5s;
+}
+.menuArrow  .path {
+    animation-delay: 4s;
+}
+.text {
+}
+.menuArrow .text{
+    position: absolute;
+    left: -20px;
+    top: 0;
+    color: #0086c6;
+        text-transform: uppercase;
+    animation: pulse .5s forwards;
+    animation-delay: 3s;
+      -webkit-transform: scale(0);
+     -moz-transform: scale(0);
+      -ms-transform: scale(0);
+       -o-transform: scale(0);
+          transform: scale(0);
+     transform-origin: 50% 50%;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes zoom {
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0)
+    }
+    30% {
+        transform: scale(1.2)
+    }
+    70% {
+        transform: scale(.8)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
