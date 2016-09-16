@@ -19,7 +19,10 @@ $dinm:			'DIN Pro Med';
 html,
 body {
 	height: 100%;
-	font-family: $dinm;
+    background: #a3effd;
+}
+#main {
+    height: 100%;
 }
 
 // lAYOUT

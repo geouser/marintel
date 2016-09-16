@@ -32,10 +32,17 @@ jQuery(document).ready(function($) {
         $(this).toggleClass('active');
         $(this).siblings('header').toggleClass('active');
         if ($('header').hasClass('active')) {
-                $('body, html').css('overflow', 'hidden');
-            } else {
-                $('body, html').css('overflow', 'visible');
-            }
+            $(this).siblings('header').css({
+                'opacity': '1',
+                'right': '0'
+            });
+            $('body').css('overflow', 'hidden');
+        } else {
+            $(this).siblings('header').css({
+                'right': '-270px'
+            });
+            $('body').css('overflow', 'visible');
+        }
     });
 
 
