@@ -1,0 +1,28 @@
+footer {
+	position: absolute;
+	right: 40px;
+	bottom: 40px;
+	text-align: right;
+	z-index: 5;
+
+	.text {
+		display: inline-block;
+		vertical-align: middle;
+		color: #fff;
+		font-size: 14px;
+		text-transform: uppercase;
+		line-height: 22px;
+		font-family: $dinm;
+
+		a {
+			color: $blue;
+			text-decoration: underline;
+		}
+	}
+	.anchor {
+		display: inline-block;
+		vertical-align: middle;
+		opacity: .7;
+		margin-left: 10px;
+	}
+}

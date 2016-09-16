@@ -14,6 +14,7 @@
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
+	margin-right: 10px;
 
 	.pin {
 		width: 7px;
@@ -26,10 +27,10 @@
 		transform: translate(-50%, -50%);
 		position: absolute;
 		display: block;
-		-webkit-animation: pin-pulse 1.25s infinite linear;
-		   -moz-animation: pin-pulse 1.25s infinite linear;
-		    -ms-animation: pin-pulse 1.25s infinite linear;
-		  		animation: pin-pulse 1.25s infinite linear;
+		-webkit-animation: pin-pulse 3s infinite linear;
+		   -moz-animation: pin-pulse 3s infinite linear;
+		    -ms-animation: pin-pulse 3s infinite linear;
+		  		animation: pin-pulse 3s infinite linear;
 
 		&.pin-1 {
 			left: 60%;
@@ -94,17 +95,17 @@
 	font-size: 14px;
 	line-height: 22px;
 
-		&:after {
-			content: '';
-			width: 7px;
-			height: 16px;
-			background-color: $blue;
-			display: inline-block;
-			opacity: 1;
-		    -webkit-animation: blink 0.7s infinite;
-		    -moz-animation: blink 0.7s infinite;
-		    animation: blink 0.7s infinite;
-		}
+	&:after {
+		content: '';
+		width: 7px;
+		height: 16px;
+		background-color: $blue;
+		display: inline-block;
+		opacity: 1;
+	    -webkit-animation: blink 0.7s infinite;
+	    -moz-animation: blink 0.7s infinite;
+	    animation: blink 0.7s infinite;
+	}
 }
 
 

@@ -126,8 +126,44 @@ jQuery(document).ready(function($) {
         
     });
 
+
+
+    /*---------------------------
+                                  Typed 
+    ---------------------------*/
+    var text = '$RATTM,02,0.36,45.2,T,0.09,308.5,T,0.4,0.0,N,,T,,,M*12 ^500 \n';
+    text = text+'$RATTM,03,0.68,61.8,T,0.01,288.7,T,0.7,0.0,N,,T,,,M*14 ^1500 \n';
+    text = text+'$RATTM,04,0.64,98.7,T,0.06,176.2,T,0.6,0.0,N,,T,,,M*17';
+    $(".typing").typed({
+        strings: [text],
+        typeSpeed: 30
+    });
+
+
+    /*---------------------------
+                                  delay
+    ---------------------------*/
+    $('a').click(function (e) {
+        e.preventDefault();                   // prevent default anchor behavior
+        var url = $(this).attr("href"); // store anchor href
+        $('body').css('overflow', 'hidden');
+        $('.view-zone').addClass('scale-out')
+
+        setTimeout(function(){
+             window.location = url;
+        }, 100);       
+    }); 
+
+
+    
+
 }); // end file
 
+
+
+
+
+/*
 $(function(){
   'use strict';
   var $page = $('#main'),
@@ -156,19 +192,5 @@ $(function(){
         }
       },
       smoothState = $page.smoothState(options).data('smoothState');
-
-
-
-    /*---------------------------
-                                  Typed 
-    ---------------------------*/
-    var text = '$RATTM,02,0.36,45.2,T,0.09,308.5,T,0.4,0.0,N,,T,,,M*12 ^500 \n';
-    text = text+'$RATTM,03,0.68,61.8,T,0.01,288.7,T,0.7,0.0,N,,T,,,M*14 ^1500 \n';
-    text = text+'$RATTM,04,0.64,98.7,T,0.06,176.2,T,0.6,0.0,N,,T,,,M*17';
-    $(".typing").typed({
-        strings: [text],
-        typeSpeed: 30
-    });
-
-
 });
+*/
