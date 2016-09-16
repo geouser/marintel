@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'DIN Pro Cond Med';
+	src: url('../fonts/subset-DINPro-CondensedMedium.eot');
+	src: url('../fonts/subset-DINPro-CondensedMedium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/subset-DINPro-CondensedMedium.woff') format('woff'),
+		url('../fonts/subset-DINPro-CondensedMedium.ttf') format('truetype'),
+		url('../fonts/subset-DINPro-CondensedMedium.svg#DINPro-CondensedMedium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DIN Pro Med';
+	src: url('../fonts/subset-DINPro-Medium.eot');
+	src: url('../fonts/subset-DINPro-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/subset-DINPro-Medium.woff') format('woff'),
+		url('../fonts/subset-DINPro-Medium.ttf') format('truetype'),
+		url('../fonts/subset-DINPro-Medium.svg#DINPro-Medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
