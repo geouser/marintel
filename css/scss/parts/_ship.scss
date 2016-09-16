@@ -18,14 +18,30 @@
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 	cursor: pointer;
+	animation: blick 2s linear infinite;
+    animation-delay: 3s;
 
 	&:hover {
 		opacity: 0.7;
 		stroke: #F7AD2B;
 		stroke-width: 2;
+		animation: none;
 	}
 }
 .what-we-do-label {
 	font-family: $dincm;
 	font-size: 20px;
+}
+
+@keyframes blick {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0.4;
+    }
 }

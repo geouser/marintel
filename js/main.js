@@ -6,7 +6,7 @@ window.params = {
 
 
 jQuery(document).ready(function($) {
-
+    $('.animate').addClass('animated');
 
     /*---------------------------
                                   ADD CLASS ON SCROLL

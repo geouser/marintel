@@ -91,7 +91,9 @@
     z-index: 10;
 }
 
-.circle {
+
+
+.animated .circle {
   -webkit-transform: scale(0);
      -moz-transform: scale(0);
       -ms-transform: scale(0);
@@ -99,31 +101,39 @@
           transform: scale(0);
     transform-origin: 50% 50%;
     animation: zoom .2s forwards;
-    animation-delay: 1s;
+    animation-delay: 1.3s;
 }
-.path {
+
+.animated .path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: dash 3s forwards;
-  animation-delay: .4s;
+  animation: dash 4s ease-out forwards;
+  animation-delay: .6s;
 }
-.menuArrow  .circle {
-    animation-delay: 3.5s;
+
+.animated .text {
+    animation: fade 1s forwards;
+    animation-delay: 2s;
+    opacity: 0;
 }
-.menuArrow  .path {
-    animation-delay: 4s;
+
+
+.animated.menuArrow  .circle {
+    animation-delay: 6s;
 }
-.text {
+.animated.menuArrow  .path {
+    animation-delay: 6.2s;
 }
-.menuArrow .text{
+.animated.menuArrow .text{
     position: absolute;
     left: -20px;
     top: 0;
     color: #0086c6;
-        text-transform: uppercase;
-    animation: pulse .5s forwards;
-    animation-delay: 3s;
-      -webkit-transform: scale(0);
+    opacity: 1;
+    text-transform: uppercase;
+    animation: pulse 1s forwards;
+    animation-delay: 5s;
+    -webkit-transform: scale(0);
      -moz-transform: scale(0);
       -ms-transform: scale(0);
        -o-transform: scale(0);
@@ -131,6 +141,8 @@
      transform-origin: 50% 50%;
 }
 
+
+// animations
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
@@ -142,15 +154,24 @@
     }
 }
 
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes pulse {
     0% {
         transform: scale(0)
     }
     30% {
-        transform: scale(1.2)
+        transform: scale(1.4)
     }
     70% {
-        transform: scale(.8)
+        transform: scale(.6)
     }
     100% {
         transform: scale(1)
