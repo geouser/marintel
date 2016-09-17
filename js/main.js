@@ -31,16 +31,10 @@ jQuery(document).ready(function($) {
         event.preventDefault();
         $(this).toggleClass('active');
         $(this).siblings('header').toggleClass('active');
+
         if ($('header').hasClass('active')) {
-            $(this).siblings('header').css({
-                'opacity': '1',
-                'right': '0'
-            });
             $('body').css('overflow', 'hidden');
         } else {
-            $(this).siblings('header').css({
-                'right': '-270px'
-            });
             $('body').css('overflow', 'visible');
         }
     });
@@ -147,14 +141,24 @@ jQuery(document).ready(function($) {
         e.preventDefault();                   // prevent default anchor behavior
         var url = $(this).attr("href"); // store anchor href
         $('body').css('overflow', 'hidden');
-        $('.view-zone').addClass('scale-out')
+        $('.view-zone').addClass('scale-out');
+        $('.mainHeader').removeClass('active');
+        $('.menu-button').removeClass('active');
 
         setTimeout(function(){
              window.location = url;
-        }, 100);       
+        }, 400);       
     }); 
 
 
+    /*---------------------------
+                                  Markers
+    ---------------------------*/
+    $('.marker').on('click', function(event) {
+        event.preventDefault();
+        $(this).toggleClass('active');
+        $(this).siblings('.marker').removeClass('active');
+    });
     
 
 }); // end file

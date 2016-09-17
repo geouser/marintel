@@ -8,10 +8,10 @@ body {
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
-	-webkit-animation: scale-in 0.1s linear;
-	   -moz-animation: scale-in 0.1s linear;
-	    -ms-animation: scale-in 0.1s linear;
-	  		animation: scale-in 0.1s linear;
+	-webkit-animation: scale-in .4s linear;
+	   -moz-animation: scale-in .4s linear;
+	    -ms-animation: scale-in .4s linear;
+	  		animation: scale-in .4s linear;
 }
 
 @-webkit-keyframes scale-in {
@@ -83,10 +83,10 @@ body {
 
 
 .scale-out {
-	-webkit-animation: scale-out 0.1s linear;
-	   -moz-animation: scale-out 0.1s linear;
-	    -ms-animation: scale-out 0.1s linear;
-	  		animation: scale-out 0.1s linear;
+	-webkit-animation: scale-out 0.4s linear;
+	   -moz-animation: scale-out 0.4s linear;
+	    -ms-animation: scale-out 0.4s linear;
+	  		animation: scale-out 0.4s linear;
 }
 
 @-webkit-keyframes scale-out {

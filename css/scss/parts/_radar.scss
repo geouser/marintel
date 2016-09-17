@@ -7,7 +7,7 @@
 .radar {
 	width: 67px;
 	height: 67px;
-	background-image: url(../images/radar.png);
+	background-image: url(../images/radar.svg);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -19,7 +19,7 @@
 	.pin {
 		width: 7px;
 		height: 7px;
-		background-color: $blue;
+		background-color: #59C9FF;
 		border-radius: 50%;
 		-webkit-transform: translate(-50%, -50%);
 		-ms-transform: translate(-50%, -50%);
