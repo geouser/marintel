@@ -86,9 +86,13 @@
     z-index: 100;
     background-color: #0094d9;
     border: 5px solid #fff;
-    @include transition(all, .4s);
+    @include transition(all, .3s);
     -webkit-border-radius: 50%;
             border-radius: 50%;
+    -webkit-animation: fadeIn 1s ease;
+       -moz-animation: fadeIn 1s ease;
+        -ms-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
     .menu-line {
         display: block;
         @include position(absolute, auto, 0, auto, 0);
@@ -108,16 +112,30 @@
     &.active .top_line     {   @include transform(rotate(45deg)); top: 50%;}
     &.active .bottom_line  {   @include transform(rotate(-45deg)); bottom: 45%;}
     &.active .middle_line  {   width: 0; left: 50%;}
-
-
 }
+.page-changing .menu-button {
+    opacity: 0;
+}
+
 
 
 .logo {
     display: block;
     @include position(absolute, 40px, auto, auto, 40px);
     z-index: 5;
+    -webkit-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    -webkit-animation: fadeIn 1s linear;
+       -moz-animation: fadeIn 1s linear;
+        -ms-animation: fadeIn 1s linear;
+            animation: fadeIn 1s linear;
+   
 }
+.page-changing .logo {
+    opacity: 0;
+}
+
 
 .menuArrow {
     position: absolute;

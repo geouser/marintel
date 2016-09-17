@@ -130,7 +130,8 @@ jQuery(document).ready(function($) {
     text = text+'$RATTM,04,0.64,98.7,T,0.06,176.2,T,0.6,0.0,N,,T,,,M*17';
     $(".typing").typed({
         strings: [text],
-        typeSpeed: 30
+        typeSpeed: 30,
+        startDelay: 2000,
     });
 
 
@@ -140,7 +141,7 @@ jQuery(document).ready(function($) {
     $('a').click(function (e) {
         e.preventDefault();                   // prevent default anchor behavior
         var url = $(this).attr("href"); // store anchor href
-        $('body').css('overflow', 'hidden');
+        $('body').css('overflow', 'hidden').addClass('page-changing');
         $('.view-zone').addClass('scale-out');
         $('.mainHeader').removeClass('active');
         $('.menu-button').removeClass('active');

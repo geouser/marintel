@@ -4,6 +4,14 @@ footer {
 	bottom: 40px;
 	text-align: right;
 	z-index: 5;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+    -webkit-animation: fadeIn 1s ease;
+       -moz-animation: fadeIn 1s ease;
+        -ms-animation: fadeIn 1s ease;
+            animation: fadeIn 1s ease;
 
 	.text {
 		display: inline-block;
@@ -26,4 +34,7 @@ footer {
 		opacity: .7;
 		margin-left: 10px;
 	}
+}
+.page-changing footer {
+	opacity: 0;
 }
