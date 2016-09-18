@@ -93,6 +93,11 @@
        -moz-animation: fadeIn 1s ease;
         -ms-animation: fadeIn 1s ease;
             animation: fadeIn 1s ease;
+
+    @media (max-width: 1000px) {
+        top: 10px;
+        right: 10px;
+    }
     .menu-line {
         display: block;
         @include position(absolute, auto, 0, auto, 0);
@@ -102,6 +107,7 @@
         -webkit-border-radius: 1px;
         border-radius: 1px;
         @include transition(all, .4s);
+
     }
 
     .top_line              {   top: 16px;  margin: auto;}
@@ -130,6 +136,17 @@
        -moz-animation: fadeIn 1s linear;
         -ms-animation: fadeIn 1s linear;
             animation: fadeIn 1s linear;
+
+    @media (max-width: 1000px) {
+        width: 100px;
+        top: 10px;
+        left: 5px;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
    
 }
 .page-changing .logo {
@@ -142,6 +159,10 @@
     top: 95px;
     right: 65px;
     z-index: 10;
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
 }
 
 

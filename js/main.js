@@ -4,6 +4,17 @@ window.params = {
     isIOS: /iPhone|iPad|iPod/i.test(navigator.userAgent)
 };
 
+function typing(){
+    var text = '$RATTM,02,0.36,45.2,T,0.09,308.5,T,0.4,0.0,N,,T,,,M*12 ^500 \n';
+    text = text+'$RATTM,03,0.68,61.8,T,0.01,288.7,T,0.7,0.0,N,,T,,,M*14 ^1500 \n';
+    text = text+'$RATTM,04,0.64,98.7,T,0.06,176.2,T,0.6,0.0,N,,T,,,M*17';
+    $(".typing").typed({
+        strings: [text],
+        typeSpeed: 30,
+        startDelay: 2000,
+    });
+}
+
 
 jQuery(document).ready(function($) {
     $('.animate').addClass('animated');
@@ -27,7 +38,7 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   MENU TOGGLE
     ---------------------------*/
-    $('.menu-button').on('click', function(event) {
+    $(document).on('click', '.menu-button', function(event) {
         event.preventDefault();
         $(this).toggleClass('active');
         $(this).siblings('header').toggleClass('active');
@@ -44,7 +55,7 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Magnific popup
     ---------------------------*/
-    $('.magnific').magnificPopup({
+    /*$('.magnific').magnificPopup({
         type: 'inline',
 
         fixedContentPos: false,
@@ -59,7 +70,7 @@ jQuery(document).ready(function($) {
         midClick: true,
         removalDelay: 300,
         mainClass: 'my-mfp-slide-bottom'
-    });
+    });*/
 
 
 
@@ -75,7 +86,7 @@ jQuery(document).ready(function($) {
      * @return n/a
      *
     */
-    function openPopup(popup){
+    /*function openPopup(popup){
         $.magnificPopup.open({
             items: {
               src: popup
@@ -91,11 +102,10 @@ jQuery(document).ready(function($) {
             removalDelay: 300,
             mainClass: 'my-mfp-slide-bottom'
         }, 0);
-    }
+    }*/
 
-    $('form').on('submit', function(event) {
+    /*$('form').on('submit', function(event) {
         event.preventDefault();
-        /* Act on the event */
         var data = $(this).serialize();
         $.ajax({
             url: theme.url + '/forms.php',
@@ -118,27 +128,19 @@ jQuery(document).ready(function($) {
             });
         });
         
-    });
+    });*/
 
 
 
     /*---------------------------
                                   Typed 
     ---------------------------*/
-    var text = '$RATTM,02,0.36,45.2,T,0.09,308.5,T,0.4,0.0,N,,T,,,M*12 ^500 \n';
-    text = text+'$RATTM,03,0.68,61.8,T,0.01,288.7,T,0.7,0.0,N,,T,,,M*14 ^1500 \n';
-    text = text+'$RATTM,04,0.64,98.7,T,0.06,176.2,T,0.6,0.0,N,,T,,,M*17';
-    $(".typing").typed({
-        strings: [text],
-        typeSpeed: 30,
-        startDelay: 2000,
-    });
-
+    typing();
 
     /*---------------------------
                                   delay
     ---------------------------*/
-    $('a').click(function (e) {
+    /*$('a').click(function (e) {
         e.preventDefault();                   // prevent default anchor behavior
         var url = $(this).attr("href"); // store anchor href
         $('body').css('overflow', 'hidden').addClass('page-changing');
@@ -149,16 +151,15 @@ jQuery(document).ready(function($) {
         setTimeout(function(){
              window.location = url;
         }, 400);       
-    }); 
+    }); */
 
 
     /*---------------------------
                                   Markers
     ---------------------------*/
-    $('.marker').on('click', function(event) {
+    $(document).on('click', '.marker', function(event) {
         event.preventDefault();
-        $(this).toggleClass('active');
-        $(this).siblings('.marker').removeClass('active');
+        $(this).toggleClass('active').siblings('.marker').removeClass('active');
     });
     
 
