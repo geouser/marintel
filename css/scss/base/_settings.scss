@@ -50,6 +50,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 28px;
+  border-color: #DDD;
 }
 
 
@@ -71,4 +72,13 @@ h1 {
   to {
     opacity: 1;
   }
+}
+
+.container:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }

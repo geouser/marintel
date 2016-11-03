@@ -20,6 +20,16 @@ jQuery(document).ready(function($) {
     $('.animate').addClass('animated');
     $('.container').perfectScrollbar();
 
+    $('.product').click(function(event){
+        event.preventDefault();
+        $('.moreInfo').addClass('active');
+    });
+
+    $('.hideInfo').click(function(event){
+        event.preventDefault();
+        $('.moreInfo').removeClass('active');
+    });
+
     /*---------------------------
                                   ADD CLASS ON SCROLL
     ---------------------------*/

@@ -5,11 +5,14 @@
     height: 640px;
     max-height: 70%;
     max-width: 80%;
-    padding: 35px 0px 125px 40px;
+    padding: 20px 0px 125px 40px;
     background-color: #FFF;
     overflow: hidden;
     -webkit-border-radius: 25px;
             border-radius: 25px;
+    &--tall {
+        padding-bottom: 35px;
+    }
     p {
         font: 14px/20px "Arial";
         color: #444444;
@@ -30,6 +33,28 @@
         border-top: 1px solid #DDD;
         padding: 0 160px;
         @include flex();
+    }
+    h1 {
+        position: relative;
+        z-index: 2;
+        padding-right: 65px;
+    }
+    h1 + span {
+        margin-top: -18px;
+        display: block;
+        text-align: center;
+        font: 20px/24px $dincm;
+        color: #4F4F4F;
+        padding-right: 65px;
+    }
+    h1 + span + .container {
+        padding-top: 35px;
+    }
+    hr {
+        display: block;
+        width: 100%;
+        margin: 30px auto;
+        clear: both;
     }
 }
 
