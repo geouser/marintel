@@ -20,6 +20,10 @@ html,
 body {
 	height: 100%;
     background: #a3effd;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
 #main {
     height: 100%;
