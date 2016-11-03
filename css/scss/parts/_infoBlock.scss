@@ -16,7 +16,7 @@
         margin-bottom: 28px;
     }
     .container {
-        height: 390px;
+        height: calc(100% - 100px);
         position: relative;
         padding-right: 65px;
     }
