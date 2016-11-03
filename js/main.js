@@ -18,6 +18,7 @@ function typing(){
 
 jQuery(document).ready(function($) {
     $('.animate').addClass('animated');
+    $('.container').perfectScrollbar();
 
     /*---------------------------
                                   ADD CLASS ON SCROLL

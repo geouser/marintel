@@ -39,7 +39,14 @@ body {
   height: 100%;
 }
 
-
+h1 {
+  font: 28px/60px $dincm;
+  color: $blue;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
 
 
 @-webkit-keyframes fadeIn {
