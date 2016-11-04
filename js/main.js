@@ -16,19 +16,101 @@ function typing(){
 }
 
 
-jQuery(document).ready(function($) {
-    $('.animate').addClass('animated');
+function hr(){
+    $(window).on('load resize', function(event) {
+        event.preventDefault();
+        $('.gallery-box').find('hr').remove();
+        var window_width = $(this).width();
 
+        $('.albom').each(function(index, el) {
+            var el_index = index+1;
+
+            if ( window_width > 1200 ) {
+                if ( el_index % 5 === 0 ) {
+                    $('<hr>').insertAfter(el);
+                }
+            } else if ( window_width <= 1200 && window_width > 1000 ) {
+                if ( el_index % 4 === 0 ) {
+                    $('<hr>').insertAfter(el);
+                }
+            } else if ( window_width <= 1000 && window_width > 700 ) {
+                if ( el_index % 3 === 0 ) {
+                    $('<hr>').insertAfter(el);
+                }
+            } else if ( window_width <= 700 && window_width > 500 ) {
+                if ( el_index % 2 === 0 ) {
+                    $('<hr>').insertAfter(el);
+                }
+            }
+        });
+    });    
+}
+
+
+function initScroll(){
     if ( $('.container').length > 0 ) {
         $('.container').perfectScrollbar();
 
         $(window).on('resize', function(event) {
             event.preventDefault();
-            $('.container').perfectScrollbar('update'); 
+            reInitScroll();
         });
-    }
+    }    
+}
 
-    $('.product').click(function(event){
+function reInitScroll() {
+    if ( $('.container').length > 0 ) {
+        $('.container').perfectScrollbar('update');
+    }
+}
+
+function initMagnificGallery(){
+    $(document).on('click', '.albom', function(event) {
+        event.preventDefault();
+        $(this).find('a').first().click();
+    });
+
+    $('.albom').each(function(index, el) {
+        $(this).magnificPopup({
+            delegate: 'a',
+            type: 'image',
+
+            fixedContentPos: false,
+            fixedBgPos: true,
+
+            overflowY: 'auto',
+            modal: false,
+
+            closeBtnInside: true,
+            preloader: false,
+            
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            },
+            image: {
+                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            }
+        });
+    });
+
+    
+}
+
+
+jQuery(document).ready(function($) {
+    $('.animate').addClass('animated');
+
+
+    /*---------------------------
+                                  Init PerfectScrollbar
+    ---------------------------*/
+    initScroll();
+
+
+
+    $(document).on('click', '.product', function(event){
         event.preventDefault();
         $('.moreInfo').addClass('active');
         var title = $(this).children('.product__hiddenInfo').children('.product__hiddenInfo__title').text(),
@@ -39,9 +121,10 @@ jQuery(document).ready(function($) {
             target.children('.title').text(title);
             target.children('.moreInfo__text').html(text);
             target.children('.moreInfo__images').html(images);
+            reInitScroll();
     });
 
-    $('.hideInfo').click(function(event){
+    $(document).on('click', '.hideInfo', function(event){
         event.preventDefault();
         $('.moreInfo').removeClass('active');
         target = $('.moreInfo').children('.container');
@@ -87,23 +170,15 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Magnific popup
     ---------------------------*/
-    /*$('.magnific').magnificPopup({
-        type: 'inline',
+    initMagnificGallery();
 
-        fixedContentPos: false,
-        fixedBgPos: true,
 
-        overflowY: 'auto',
-        modal: false,
+    /*---------------------------
+                                  Gallery hr
+    ---------------------------*/
+    hr();
 
-        closeBtnInside: true,
-        preloader: false,
-        
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'my-mfp-slide-bottom'
-    });*/
-
+    
 
 
     /*----------------------------
@@ -169,22 +244,6 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     typing();
 
-    /*---------------------------
-                                  delay
-    ---------------------------*/
-    /*$('a').click(function (e) {
-        e.preventDefault();                   // prevent default anchor behavior
-        var url = $(this).attr("href"); // store anchor href
-        $('body').css('overflow', 'hidden').addClass('page-changing');
-        $('.view-zone').addClass('scale-out');
-        $('.mainHeader').removeClass('active');
-        $('.menu-button').removeClass('active');
-
-        setTimeout(function(){
-             window.location = url;
-        }, 400);       
-    }); */
-
 
     /*---------------------------
                                   Markers
@@ -196,39 +255,3 @@ jQuery(document).ready(function($) {
     
 
 }); // end file
-
-
-
-
-
-/*
-$(function(){
-  'use strict';
-  var $page = $('#main'),
-      options = {
-        debug: true,
-        prefetch: true,
-        cacheLength: 2,
-        forms: 'form',
-        onStart: {
-          duration: 600, // Duration of our animation
-          render: function ($container) {
-            // Add your CSS animation reversing class
-            $container.addClass('is-exiting');
-            // Restart your animation
-            smoothState.restartCSSAnimations();
-          }
-        },
-        onReady: {
-          duration: 0,
-          render: function ($container, $newContent) {
-            // Remove your CSS animation reversing class
-            $container.removeClass('is-exiting');
-            // Inject the new content
-            $container.html($newContent);
-          }
-        }
-      },
-      smoothState = $page.smoothState(options).data('smoothState');
-});
-*/

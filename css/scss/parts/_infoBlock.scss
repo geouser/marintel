@@ -61,8 +61,8 @@
 
 .ps-container>.ps-scrollbar-y-rail>.ps-scrollbar-y,
 .ps-container>.ps-scrollbar-y-rail>.ps-scrollbar-y:hover {
-    background-color: $blue;
-    width: 6px;
+    background-color: $blue!important;
+    width: 6px!important;
     right: 0;
     position: absolute;
 }
@@ -74,6 +74,6 @@
     position: absolute;
 }
 .ps-container>.ps-scrollbar-y-rail:hover .ps-scrollbar-y {
-    background-color: $blue;
-    width: 6px;
+    background-color: $blue!important;
+    width: 6px!important;
 }
