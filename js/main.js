@@ -12,7 +12,7 @@ function typing(){
         strings: [text],
         typeSpeed: 30,
         startDelay: 2000,
-        loop: false,
+        loop: true,
     });
 }
 
