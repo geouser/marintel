@@ -132,7 +132,7 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Clock
     ---------------------------*/
-    clock()
+    clock();
 
     $(document).on('click', '.product', function(event){
         event.preventDefault();
