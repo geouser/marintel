@@ -51,6 +51,17 @@ h1 {
   text-transform: uppercase;
   margin-bottom: 28px;
   border-color: #DDD;
+  @include m1600 {
+    margin-bottom: 20px;
+    line-height: 48px;
+  }
+  @media (max-height: 700px) {
+    line-height: 36px;
+    font-size: 26px;
+  }
+  @media (max-width: 600px) {
+    font-size: 24px;
+  }
 }
 
 
@@ -81,6 +92,11 @@ h1 {
   content: " ";
   clear: both;
   height: 0;
+}
+.container--list {
+   @media (max-width: 860px) {
+     text-align: center;
+   }
 }
 .list {
   @include flex($alignI: flex-strat, $justify: flex-start);

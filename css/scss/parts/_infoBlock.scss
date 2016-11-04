@@ -8,8 +8,22 @@
     padding: 20px 0px 125px 40px;
     background-color: rgba(255, 255, 255, .95);
     overflow: hidden;
+    -webkit-transform: translateY(30px);
+       -moz-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+         -o-transform: translateY(30px);
+            transform: translateY(30px);
     -webkit-border-radius: 25px;
             border-radius: 25px;
+    @media (max-height: 700px) {
+        padding-bottom: 85px;
+    }
+    @media (max-width: 700px) {
+        padding-left: 20px;
+    }
+    @media (max-width: 600px) {
+        max-height: 77%;
+    }
     &--tall {
         padding-bottom: 35px;
     }
@@ -17,12 +31,26 @@
         font: 14px/20px "Arial";
         color: #444444;
         margin-bottom: 28px;
+        @media (max-width: 500px) {
+            font-size: 13px;
+            line-height: 18px;
+            margin-bottom: 20px;
+        }
     }
     .container {
         height: calc(100% - 100px);
         position: relative;
         padding-right: 65px;
         overflow: hidden;
+        @media (max-width: 700px) {
+            padding-right: 35px;
+        }
+        @include m1600 {
+            height: calc(100% - 80px);
+        }
+        @media (max-height: 700px) {
+            height: calc(100% - 65px);
+        }
     }
     footer {
         position: absolute;
@@ -33,12 +61,31 @@
         width: 100%;
         border-top: 1px solid #DDD;
         padding: 0 160px;
-        @include flex();
+        @include flex($wrap: nowrap);
+        @media (max-height: 700px) {
+            height: 80px;
+        }
+        @media (max-width: 1200px) {
+            padding: 0 60px;
+        }
+        @media (max-width: 900px) {
+            padding: 0 10px;
+        }
+        img {
+            max-height: 80%;
+            max-width: 100%;
+            @media (max-width: 900px) {
+                max-width: 18%;
+            }
+        }
     }
     h1 {
         position: relative;
         z-index: 2;
         padding-right: 65px;
+        @media (max-height: 700px) {
+            padding-right: 35px;
+        }
     }
     h1 + span {
         margin-top: -18px;
@@ -47,6 +94,9 @@
         font: 20px/24px $dincm;
         color: #4F4F4F;
         padding-right: 65px;
+        @media (max-height: 700px) {
+            padding-right: 35px;
+        }
     }
     h1 + span + .container {
         padding-top: 35px;
@@ -56,6 +106,9 @@
         width: 100%;
         margin: 30px auto;
         clear: both;
+        @media (max-width: 1600px) {
+            margin: 10px auto 30px;
+        }
     }
 }
 
