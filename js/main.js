@@ -18,35 +18,32 @@ function typing(){
 
 
 function hr(){
-    $(window).on('load resize', function(event) {
-        event.preventDefault();
-        $('.gallery-box').find('hr').remove();
-        var window_width = $(this).width();
+    $('.gallery-box, .products-box').find('hr').remove();
+    var window_width = $(this).width();
 
-        $('.albom').each(function(index, el) {
-            var el_index = index+1;
+    $('.albom, .product').each(function(index, el) {
+        var el_index = index+1;
 
-            if ( window_width > 1200 ) {
-                if ( el_index % 5 === 0 ) {
-                    $('<hr>').insertAfter(el);
-                }
-            } else if ( window_width <= 1200 && window_width > 1000 ) {
-                if ( el_index % 4 === 0 ) {
-                    $('<hr>').insertAfter(el);
-                }
-            } else if ( window_width <= 1000 && window_width > 700 ) {
-                if ( el_index % 3 === 0 ) {
-                    $('<hr>').insertAfter(el);
-                }
-            } else if ( window_width <= 700 && window_width > 500 ) {
-                if ( el_index % 2 === 0 ) {
-                    $('<hr>').insertAfter(el);
-                }
+        if ( window_width > 1200 ) {
+            if ( el_index % 5 === 0 ) {
+                $('<hr>').insertAfter(el);
             }
-        });
+        } else if ( window_width <= 1200 && window_width > 1000 ) {
+            if ( el_index % 4 === 0 ) {
+                $('<hr>').insertAfter(el);
+            }
+        } else if ( window_width <= 1000 && window_width > 700 ) {
+            if ( el_index % 3 === 0 ) {
+                $('<hr>').insertAfter(el);
+            }
+        } else if ( window_width <= 700 && window_width > 500 ) {
+            if ( el_index % 2 === 0 ) {
+                $('<hr>').insertAfter(el);
+            }
+        }
+    });
 
-        reInitScroll();
-    });    
+    reInitScroll();
 }
 
 
@@ -73,7 +70,7 @@ function initMagnificGallery() {
         $(this).find('a').first().click();
     });
 
-    $('.albom').each(function(index, el) {
+    $('.albom, .moreInfo__images').each(function(index, el) {
         $(this).magnificPopup({
             delegate: 'a',
             type: 'image',
@@ -203,7 +200,11 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Gallery hr
     ---------------------------*/
-    hr();
+    $(window).on('load resize', function(event) {
+        event.preventDefault();
+        hr();
+    });
+    
 
     
 

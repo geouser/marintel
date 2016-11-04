@@ -12,6 +12,9 @@ body {
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
 	-webkit-animation: scale-in .7s ease both;
 	   -moz-animation: scale-in .7s ease both;
 	    -ms-animation: scale-in .7s ease both;

@@ -1,10 +1,14 @@
-.gallery-box {
+.gallery-box,
+.products-box,
+.moreInfo__images {
     width: -webkit-calc(100% + 20px);
     width: calc(100% + 20px);
     margin: 0 -10px;
     @include flex($alignI: flex-start, $justify: flex-start);
 
-    .albom {
+    .albom,
+    .product,
+    .productImg {
         width: -webkit-calc(20% - 20px);
         width: calc(20% - 20px);
         margin: 0 10px;
