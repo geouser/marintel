@@ -1,8 +1,9 @@
 /*Base styles*/
 @import 'base/reset';
 @import 'base/fonts';
-@import 'base/settings';
 @import 'base/mixins';
+@import 'base/settings';
+
 
 
 /*Plugins styles*/
@@ -22,5 +23,7 @@
 @import 'parts/footer';
 @import 'parts/infoBlock';
 @import 'parts/product';
+@import 'parts/friends';
+
 
 @import 'parts/inner';

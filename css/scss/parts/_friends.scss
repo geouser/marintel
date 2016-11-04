@@ -1,0 +1,23 @@
+.friend {
+    width: 16.6666%;
+    height: 90px;
+    border: 1px solid #dddddd;
+    text-align: center;
+    margin-left: -1px;
+    margin-top: -1px;
+    &:nth-of-type(6n + 1) {
+        margin-left: 0;
+    }
+    img {
+        max-width: 90%;
+        max-height: 90%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 90px;
+    }
+}
