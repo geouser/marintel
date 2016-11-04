@@ -6,7 +6,7 @@
     max-height: 70%;
     max-width: 80%;
     padding: 20px 0px 125px 40px;
-    background-color: #FFF;
+    background-color: rgba(255, 255, 255, .95);
     overflow: hidden;
     -webkit-border-radius: 25px;
             border-radius: 25px;
@@ -22,6 +22,7 @@
         height: calc(100% - 100px);
         position: relative;
         padding-right: 65px;
+        overflow: hidden;
     }
     footer {
         position: absolute;
@@ -63,14 +64,16 @@
     background-color: $blue;
     width: 6px;
     right: 0;
+    position: absolute;
 }
 .ps-container>.ps-scrollbar-y-rail {
     right: 17px;
     width: 6px;
     background-color: #dddddd !important;
     opacity: 1;
+    position: absolute;
 }
 .ps-container>.ps-scrollbar-y-rail:hover .ps-scrollbar-y {
-        background-color: $blue;
+    background-color: $blue;
     width: 6px;
 }

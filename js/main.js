@@ -18,7 +18,15 @@ function typing(){
 
 jQuery(document).ready(function($) {
     $('.animate').addClass('animated');
-    $('.container').perfectScrollbar();
+
+    if ( $('.container').length > 0 ) {
+        $('.container').perfectScrollbar();
+
+        $(window).on('resize', function(event) {
+            event.preventDefault();
+            $('.container').perfectScrollbar('update'); 
+        });
+    }
 
     $('.product').click(function(event){
         event.preventDefault();

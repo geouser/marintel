@@ -1,0 +1,46 @@
+.site {
+    @include flex($alignI: flex-start, $justify: flex-start);
+    position: relative;
+    padding: 30px 0;
+
+    &:not(:first-child) {
+        border-top: 1px solid #DDDDDD;
+    }
+
+    &__thumbnail {
+        width: 150px;
+        padding: 5px;
+        border: 1px solid #ddd;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    &__description {
+        width: 470px;
+        padding-left: 23px;
+
+        &__title {
+            font-family: $dincm;
+            color: #444444;
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        &__content {
+            font-size: 14px;
+            color: #444;
+            font-family: Arial;
+        }
+
+        &__link {
+            color: #ecb200;
+            font-family: $dincm;
+            text-decoration: underline;
+            font-size: 18px;
+        }
+    }
+}
