@@ -82,3 +82,7 @@ h1 {
   clear: both;
   height: 0;
 }
+.list {
+  @include flex($alignI: flex-strat, $justify: flex-start);
+  margin-bottom: 40px;
+}
