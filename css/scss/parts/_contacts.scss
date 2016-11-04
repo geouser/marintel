@@ -1,0 +1,100 @@
+.contacts {
+    @include flex();
+    &__left,
+    &__right {
+        width: 50%;
+    }
+    &__left {
+        border-right: 1px solid #ddd;
+    }
+}
+.address {
+    display: block;
+    margin-bottom: 85px;
+    font: 14px/20px "Arial";
+    color: #444;
+    p {
+        margin-bottom: 0;
+    }
+    &__title {
+        font: 20px/24px $dincm;
+        color: $yellow;
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    @include flex($justify: flex-start);
+    div {
+        width: 200px;
+        padding-right: 30px;
+        span {
+            display: block;
+            color: #212121;
+            font-weight: 700;
+            margin-top: 15px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+    .coord {
+        color: $blue;
+    }
+}
+
+.form {
+    width: 410px;
+    margin: 0 auto;
+    > img {
+        display: block;
+        margin: 0 auto 5px;
+    }
+    span {
+        font: 20px/24px $dincm;
+        display: block;
+        margin-bottom: 28px;
+        text-align: center;
+        color: #444;
+    }
+    .inputGroup {
+        @include flex();
+        margin-bottom: 10px;
+        input {
+            width: 48%;
+        }
+        input[type="num"] {
+            width: 68%;
+        }
+    }
+    input {
+        background: #eeeeee;
+        height: 50px;
+        padding-left: 17px;
+        border: none;
+        font: 14px/20px "Arial";
+    }
+    textarea {
+        height: 150px;
+        background-color: #eee;
+        resize: none;
+        padding-left: 17px;
+        padding-top: 17px;
+        border: none;
+        width: 100%;
+        margin-bottom: 10px;
+        font: 14px/20px "Arial";
+    }
+    button {
+        display: block;
+        color: #FFF;
+        background-color: $blue;
+        height: 50px;
+        width: 100%;
+        border: none;
+        font: 20px/24px $dincm;
+    }
+}
+
+.noScroll h1 {
+    padding-right: 0;
+}
