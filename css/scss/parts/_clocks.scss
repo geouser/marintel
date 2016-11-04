@@ -1,0 +1,50 @@
+.clock {
+    position: fixed;
+    top: 35px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 5;
+    background-image: url(../images/clock.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    font-family: $dincm;
+    color: #666666;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 15px 0;
+
+    @media (max-width: 500px) {
+        display: none;
+    }
+
+    .local,
+    .utc {
+        display: inline-block;
+        vertical-align: top;
+        width: 60px;
+    }
+
+    .utc {
+        margin-right: 60px;
+        text-align: right;
+    }
+    .local {
+        margin-left: 60px;
+        text-align: left;
+    }
+
+    .digital-clock {
+        display: block;
+        width: 100%;
+        margin: 0;
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 -1px;
+        }
+    }
+}

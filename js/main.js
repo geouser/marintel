@@ -43,6 +43,8 @@ function hr(){
                 }
             }
         });
+
+        reInitScroll();
     });    
 }
 
@@ -64,7 +66,7 @@ function reInitScroll() {
     }
 }
 
-function initMagnificGallery(){
+function initMagnificGallery() {
     $(document).on('click', '.albom', function(event) {
         event.preventDefault();
         $(this).find('a').first().click();
@@ -94,8 +96,12 @@ function initMagnificGallery(){
             }
         });
     });
+}
 
-    
+
+function clock() {
+    $('.utc-clock').clock({offset: '0', type: 'digital'});
+    $('.local-clock').clock({offset: '+4', type: 'digital'});
 }
 
 
@@ -108,7 +114,10 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     initScroll();
 
-
+    /*---------------------------
+                                  Clock
+    ---------------------------*/
+    clock()
 
     $(document).on('click', '.product', function(event){
         event.preventDefault();
