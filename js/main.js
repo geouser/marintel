@@ -98,6 +98,21 @@ function initMagnificGallery() {
     });
 }
 
+function initMagnificIframe() {
+    $('.magnific-iframe').magnificPopup({
+        type: 'iframe',
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'auto',
+        modal: false,
+        closeBtnInside: true,
+        preloader: false,
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-slide-bottom'
+    });
+}
+
 
 function clock() {
     $('.utc-clock').clock({offset: '0', type: 'digital'});
@@ -166,6 +181,7 @@ jQuery(document).ready(function($) {
         event.preventDefault();
         $(this).toggleClass('active');
         $(this).siblings('header').toggleClass('active');
+        $('.menuArrow').toggle('hidden');
 
         if ($('header').hasClass('active')) {
             $('body').css('overflow', 'hidden');
@@ -180,6 +196,7 @@ jQuery(document).ready(function($) {
                                   Magnific popup
     ---------------------------*/
     initMagnificGallery();
+    initMagnificIframe();
 
 
     /*---------------------------

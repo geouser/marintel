@@ -1,7 +1,10 @@
 .site {
-    @include flex($alignI: flex-start, $justify: flex-start);
     position: relative;
     padding: 30px 0;
+
+    @media (min-width: 601px) {
+        @include flex($alignI: flex-start, $justify: flex-start);
+    }
 
     &:not(:first-child) {
         border-top: 1px solid #DDDDDD;
@@ -12,6 +15,13 @@
         padding: 5px;
         border: 1px solid #ddd;
 
+        @media (max-width: 600px) {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-bottom: 25px;
+        }
+
         img {
             width: 100%;
             display: block;
@@ -21,6 +31,16 @@
     &__description {
         width: 470px;
         padding-left: 23px;
+
+        @media (max-width: 920px) {
+            width: -webkit-calc(100% - 150px);
+            width: calc(100% - 150px);
+        }
+
+        @media (max-width: 600px) {
+            width: 100%;
+            padding-left: 0;
+        }
 
         &__title {
             font-family: $dincm;
