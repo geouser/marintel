@@ -93,6 +93,11 @@ h1 {
   clear: both;
   height: 0;
 }
+.container--list {
+   @media (max-width: 860px) {
+     text-align: center;
+   }
+}
 .list {
   @include flex($alignI: flex-strat, $justify: flex-start);
   margin-bottom: 40px;
