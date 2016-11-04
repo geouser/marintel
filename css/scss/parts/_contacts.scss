@@ -1,5 +1,5 @@
 .contacts {
-    @include flex();
+    @include flex($alignI : flex-start);
     &__left,
     &__right {
         width: 50%;
@@ -7,12 +7,58 @@
     &__left {
         border-right: 1px solid #ddd;
     }
+    @media (max-width: 1300px) {
+        &__left {
+            width: 40%;
+        }
+        &__right {
+            width: 60%;
+        }
+    }
+    @media (max-width: 750px) {
+        &__left {
+            width: 100%;
+            border: none;
+            margin-bottom: 40px;
+        }
+        &__right {
+            width: 100%;
+        }
+    }
+}
+.contactsWrap {
+    @media (min-width: 1300px) {
+        .ps-container>.ps-scrollbar-y-rail {
+        opacity: 0;
+    }
+    }
+    .container {
+        padding-right: 40px;
+    }
+    @media (max-width: 700px) {
+        padding-left: 10px;
+        .container {
+            padding-right: 20px;
+        }
+        .ps-scrollbar-y-rail {
+            right: 10px !important;
+        }
+    }
 }
 .address {
     display: block;
     margin-bottom: 85px;
     font: 14px/20px "Arial";
     color: #444;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    @media (max-width: 1600px) {
+        margin-bottom: 30px;
+    }
+    @media (max-width: 700px) {
+        text-align: center;
+    }
     p {
         margin-bottom: 0;
     }
@@ -27,6 +73,11 @@
     div {
         width: 200px;
         padding-right: 30px;
+        @media (max-width: 700px) {
+            padding-right: 0;
+            width: 100%;
+            padding: 0 10px;
+        }
         span {
             display: block;
             color: #212121;
@@ -34,6 +85,9 @@
             margin-top: 15px;
             &:first-child {
                 margin-top: 0;
+                @media (max-width: 700px) {
+                    margin-top: 15px;
+                }
             }
         }
     }
@@ -45,6 +99,7 @@
 .form {
     width: 410px;
     margin: 0 auto;
+    max-width: 90%;
     > img {
         display: block;
         margin: 0 auto 5px;
@@ -65,6 +120,10 @@
         input[type="num"] {
             width: 68%;
         }
+        img {
+            max-width: 30%;
+            display: inline-block;
+        }
     }
     input {
         background: #eeeeee;
@@ -72,6 +131,11 @@
         padding-left: 17px;
         border: none;
         font: 14px/20px "Arial";
+        @media (max-width: 700px) {
+            height: 40px;
+            font-size: 13px;
+            padding-left: 8px;
+        }
     }
     textarea {
         height: 150px;
@@ -83,6 +147,9 @@
         width: 100%;
         margin-bottom: 10px;
         font: 14px/20px "Arial";
+        @media (max-width: 1600px) {
+            height: 98px;
+        }
     }
     button {
         display: block;
