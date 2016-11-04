@@ -23,11 +23,24 @@ jQuery(document).ready(function($) {
     $('.product').click(function(event){
         event.preventDefault();
         $('.moreInfo').addClass('active');
+        var title = $(this).children('.product__hiddenInfo').children('.product__hiddenInfo__title').text(),
+            text  = $(this).children('.product__hiddenInfo').children('.product__hiddenInfo__text').html(),
+            images = $(this).children('.product__hiddenInfo').children('.product__hiddenInfo__images').html(),
+            target = $('.moreInfo').children('.container');
+
+            target.children('.title').text(title);
+            target.children('.moreInfo__text').html(text);
+            target.children('.moreInfo__images').html(images);
     });
 
     $('.hideInfo').click(function(event){
         event.preventDefault();
         $('.moreInfo').removeClass('active');
+        target = $('.moreInfo').children('.container');
+
+        target.children('.title').text('');
+        target.children('.moreInfo__text').html('');
+        target.children('.moreInfo__images').html('');
     });
 
     /*---------------------------
